@@ -4,7 +4,7 @@ services:
   - docker
 language: go
 go:
-- "1.10.1"
+- "1.11"
 
 # add TF_CONSUL_TEST=1 to run consul tests
 # they were causing timouts in travis
@@ -27,7 +27,7 @@ install:
 # packages that live there.
 # See: https://github.com/golang/go/issues/12933
 - bash scripts/gogetcookie.sh
-- go get github.com/kardianos/govendor
+- make tools
 
 before_script:
 - git config --global url.https://github.com/.insteadOf ssh://git@github.com/
